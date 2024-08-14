@@ -3,7 +3,7 @@
 #### 支持安卓4.4
 
 注意事项：
-由于MT管理器缺少某些参数，在安卓4.4环境下无法使用MT管理器调用“弦 - 安装器”，安卓4.4的系统请使用其他的文件管理器来调用“弦 - 安装器”安装软件。
+在安卓4下可能无法使用MT管理器调用“弦 - 安装器”，可尝试使用其他的文件管理器来调用“弦 - 安装器”安装软件。
 
 本项目使用了部分PokeInstaller（[https://github.com/rayae/PokeInstaller](https://github.com/rayae/PokeInstaller)）的代码
 
