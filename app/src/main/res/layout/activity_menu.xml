@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#000"
+    tools:context=".MenuActivity">
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:divider="@drawable/divider"
+            android:paddingVertical="2dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp"
+            android:paddingHorizontal="3dp"
+            android:showDividers="middle">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/app_icon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="-5dp"
+                        android:src="@drawable/icon" />
+                    
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/font_white"
+                        app:layout_constraintTop_toBottomOf="@id/app_icon"
+                        tools:ignore="MissingConstraints"
+                        android:id="@+id/app_name"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:alpha="0.6"
+                        android:textSize="12sp"
+                        android:textColor="@color/font_white"
+                        app:layout_constraintTop_toBottomOf="@id/app_name"
+                        tools:ignore="MissingConstraints"
+                        android:id="@+id/app_describe"
+                        android:text="@string/app_describe" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:alpha="0.3"
+                        android:textSize="11sp"
+                        android:textColor="@color/font_white"
+                        app:layout_constraintTop_toBottomOf="@id/app_describe"
+                        tools:ignore="MissingConstraints"
+                        android:id="@+id/app_version"
+                        android:text="V1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingBottom="4dp"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/font_white"
+                    android:text="@string/developer_describe" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/no_root"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/font_white"
+                    android:text="@string/root_tip" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/debug_tip"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/font_error"
+                    android:text="@string/debug_tip" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/check_root"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/font_white"
+                        android:focusable="true"
+                        android:text="启动时检查ROOT" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="调用安装器时会检查是否已经授权了ROOT，若未授权会弹出Toast"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false">
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/auto_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/font_white"
+                    android:focusable="true"
+                    android:text="自动删除安装包" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false">
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/auto_do"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/font_white"
+                    android:focusable="true"
+                    android:text="安装完成后自动打开/重启" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false">
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/show_perm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/font_white"
+                    android:focusable="true"
+                    android:text="解析安装包后显示权限" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/show_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/font_white"
+                    android:focusable="true"
+                    android:text="显示安装日志" />
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="关闭后仅会在安装失败后显示"
+                    android:textSize="11sp" />
+                
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="6dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/install_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="安装方式" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/install_type">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/type_pm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PM"
+                            android:textColor="@color/font_white"
+                            android:buttonTint="@color/font_white"
+                            android:backgroundTint="@color/font_white"
+                            android:focusable="true"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="常规方法，使用pm install命令安装"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/type_copy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="COPY"
+                            android:textColor="@color/font_white"
+                            android:buttonTint="@color/font_white"
+                            android:backgroundTint="@color/font_white"
+                            android:focusable="true"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="特殊方法，仅用于部分设备上，将安装包复制到/data/app目录下\n该方法需在复制完成后手动重启"
+                            android:textSize="11sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:focusable="false"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingVertical="4dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="6dp">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="14sp"
+                        android:text="界面大小" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent">
+
+                        <EditText
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:alpha="0.9"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textSize="12sp"
+                            android:textColor="@color/font_white"
+                            app:layout_constraintEnd_toStartOf="@+id/textView1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:inputType="numberDecimal"
+                            android:minWidth="30dp"
+                            android:focusable="true"
+                            android:id="@+id/ui_scale_input" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textColor="@color/font_white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:id="@+id/textView1"
+                            android:text="倍" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginHorizontal="2dp"
+                        android:textSize="11sp"
+                        android:text="@string/setting_ui_desc" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看预览" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/update_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="查看更新日志" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/font_white"
+                    android:text="@string/app_tip" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/exit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:text="退出设置" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

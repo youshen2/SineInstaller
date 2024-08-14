@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">弦 - 安装器</string>
+    <string name="app_describe">为手表开发的第三方APK安装器</string>
+    <string name="developer_describe">开发者：爅峫\n软件交流群（问题反馈）：198499074</string>
+    <string name="app_tip">本项目参考/使用了以下项目的部分代码：\n Poke Installer(https://github.com/rayae/PokeInstaller)</string>
+    <string name="setting_ui_desc">有效范围：0.3~3，每次请少量调节。如果错误调节导致无法使用请清除应用数据或卸载本软件后重装。\n修改后需要重新打开弦安装器</string>
+    <string name="debug_tip">当前版本为测试版\n未经允许\n请勿传播安装包</string>
+    <string name="update_log">V1.5\n1.去除adb安装方式\n2.优化一下些东西\n\nV1.4\n1.安装失败原因显示\n2.可以显示应用权限了\n3.更多设置项\n4.微调界面\n5.去除设置保存提醒\n\nV1.3\n1.修复无法被部分软件调用的问题\n2.修复安卓4下无法正常被MT管理器调用的问题\n3.修复渲染错误\n4.修复右滑退出的问题\n5.修复部分系统无法正常检查ROOT的问题\n6.支持安装完成自动打开/重启\n7.优化打开性能（影响安装包大小）\n\nV1.2\n1.修复文本错误\n2.修改“自动删除安装包”逻辑\n3.修改安装日志的方式\n4.允许长按复制部分内容\n5.默认关闭自动删除安装包\n6.界面微调\n\nV1.1\n1.新增adb安装方式\n2.优化不同方式安装完成后的结果显示\n3.预览的布局复用\n4.适配了安卓11+\n\nV1.0\n1.完善了功能\n2.支持更多安装方式\n3.安装器有自己的图标了\n4.为方向键做了优化\n\nV240327.DEV\n1.完善root权限的获取\n2.优化安装逻辑</string>
+    <string name="root_tip">没有授权root,点此授权</string>
+</resources>

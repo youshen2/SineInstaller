@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".SineInstaller"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.SineInstaller"
+        android:icon="@drawable/icon"
+        tools:targetApi="19">
+        <activity android:label="界面预览" android:name=".Activity.ExampleActivity" android:exported="false" />
+        <activity android:label="菜单" android:name=".Activity.MenuActivity" android:exported="true" />
+        <activity android:name=".Activity.DialogActivity" android:exported="false" android:theme="@style/Theme.SineInstaller.NoSwipe" />
+        <activity
+            android:label="使用弦安装器安装"
+            android:name=".Activity.InstallerActivity"
+            android:theme="@style/Theme.SineInstaller.NoSwipe"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:icon="@drawable/icon"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.INSTALL_PACKAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
