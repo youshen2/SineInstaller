@@ -2,8 +2,6 @@ package cn.bavelee.pokeinstaller.apk;
 
 import android.net.Uri;
 
-import cn.bavelee.pokeinstaller.apk.ApkInfo;
-
 public interface ICommanderCallback {
     void onStartParseApk(Uri uri);
 

@@ -4,42 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context=".DialogActivity">
+    tools:context=".activity.DialogActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/dialog_title"
-                android:layout_width="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_height="30dp"
-                android:textColor="@color/font_white"
-                android:text="标题"
-                android:textSize="20dp"
-                android:gravity="center"/>
-            <TextView
-                android:id="@+id/dialog_content"
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textColor="@color/font_white"
-                android:text="反正你先这样再那样最后再这样"
-                android:textSize="13dp"
-                android:alpha="0.8"
-                android:gravity="center"/>
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dialog_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:text="标题"
+                        android:textColor="@color/font_white"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/dialog_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginBottom="6dp"
+                        android:alpha="0.8"
+                        android:gravity="center"
+                        android:text="反正你先这样再那样最后再这样"
+                        android:textColor="@color/font_white"
+                        android:textSize="13dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ok_btn"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="34dp"
                 android:layout_marginHorizontal="5dp"
-                android:textColor="@color/font_white"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
                 android:text="知道了"
-                android:layout_marginBottom="5dp" />
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/font_white" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,10 @@ plugins {
 android {
     namespace = "moye.installer"
     compileSdk = 33
-    
+
     defaultConfig {
         applicationId = "moye.installer.sine"
-        minSdk = 17
+        minSdk = 19
         //noinspection ExpiredTargetSdkVersion
         targetSdk = 19
         versionCode = 20240710
@@ -31,4 +31,5 @@ android {
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.5.0")
+    implementation("com.github.JessYanCoding:AndroidAutoSize:v1.2.1")
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">弦 - 安装器</string>
     <string name="app_describe">为手表开发的第三方APK安装器</string>
-    <string name="developer_describe">开发者：爅峫\n软件交流群（问题反馈）：198499074</string>
+    <string name="developer_describe">开发者：爅峫\n软件交流群（问题反馈）：709995196</string>
     <string name="app_tip">本项目参考/使用了以下项目的部分代码：\n Poke Installer(https://github.com/rayae/PokeInstaller)</string>
     <string name="setting_ui_desc">有效范围：0.3~3，每次请少量调节。如果错误调节导致无法使用请清除应用数据或卸载本软件后重装。\n修改后需要重新打开弦安装器</string>
     <string name="debug_tip">当前版本为测试版\n未经允许\n请勿传播安装包</string>

@@ -25,16 +25,16 @@ public class ApkInfo {
         return hasInstalledApp;
     }
 
+    public void setHasInstalledApp(boolean hasInstalledApp) {
+        this.hasInstalledApp = hasInstalledApp;
+    }
+
     public String[] getPermissions() {
         return permissions;
     }
 
     public void setPermissions(String[] permissions) {
         this.permissions = permissions;
-    }
-
-    public void setApkFile(File apkFile) {
-        this.apkFile = apkFile;
     }
 
     public boolean isFakePath() {
@@ -65,6 +65,10 @@ public class ApkInfo {
         return packageName;
     }
 
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
     public String getVersion() {
         return versionName + "(" + versionCode + ")";
     }
@@ -73,16 +77,8 @@ public class ApkInfo {
         return hasInstalledApp ? installedVersionName + "(" + installedVersionCode + ")" : "NO";
     }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
-
     public boolean hasInstalledApp() {
         return hasInstalledApp;
-    }
-
-    public void setHasInstalledApp(boolean hasInstalledApp) {
-        this.hasInstalledApp = hasInstalledApp;
     }
 
     public String getInstalledVersionName() {
@@ -105,6 +101,10 @@ public class ApkInfo {
         return appName;
     }
 
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
     public Drawable getIcon() {
         return icon;
     }
@@ -113,12 +113,12 @@ public class ApkInfo {
         this.icon = icon;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
     public File getApkFile() {
         return apkFile;
+    }
+
+    public void setApkFile(File apkFile) {
+        this.apkFile = apkFile;
     }
 
     public String getFileName() {

@@ -8,21 +8,30 @@
 
     <application
         android:name=".SineInstaller"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/Theme.SineInstaller"
-        android:icon="@drawable/icon"
         tools:targetApi="19">
-        <activity android:label="界面预览" android:name=".Activity.ExampleActivity" android:exported="false" />
-        <activity android:label="菜单" android:name=".Activity.MenuActivity" android:exported="true" />
-        <activity android:name=".Activity.DialogActivity" android:exported="false" android:theme="@style/Theme.SineInstaller.NoSwipe" />
         <activity
-            android:label="使用弦安装器安装"
-            android:name=".Activity.InstallerActivity"
-            android:theme="@style/Theme.SineInstaller.NoSwipe"
+            android:name=".activity.ExampleActivity"
+            android:exported="false"
+            android:label="界面预览" />
+        <activity
+            android:name=".activity.MenuActivity"
+            android:exported="true"
+            android:label="菜单" />
+        <activity
+            android:name=".activity.DialogActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SineInstaller.NoSwipe" />
+        <activity
+            android:name=".activity.InstallerActivity"
             android:excludeFromRecents="true"
-            android:launchMode="singleTask"
+            android:exported="true"
             android:icon="@drawable/icon"
-            android:exported="true">
+            android:label="使用弦安装器安装"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.SineInstaller.NoSwipe">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.INSTALL_PACKAGE" />
@@ -34,6 +43,13 @@
                 <data android:mimeType="application/vnd.android.package-archive" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="200" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="240" />
     </application>
 
 </manifest>

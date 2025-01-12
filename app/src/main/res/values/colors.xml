@@ -2,4 +2,6 @@
 <resources>
     <color name="font_white">#FFFFFFFF</color>
     <color name="font_error">#FF3737</color>
+    <color name="primary_color">#82AB68</color>
+    <color name="primary_color_dark">#2D3826</color>
 </resources>

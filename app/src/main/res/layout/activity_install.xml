@@ -1,71 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#000">
 
     <ScrollView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:paddingBottom="4dp"
-            android:paddingHorizontal="8dp">
+            android:layout_marginHorizontal="8dp">
+
+            <TextView
+                android:id="@+id/page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="弦-安装器"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/normal_describe"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:layout_height="wrap_content"
+                android:id="@+id/normal_describe"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingHorizontal="8dp"
-                tools:ignore="MissingConstraints"
-                android:id="@+id/normal_describe">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/page_title">
 
                 <ImageView
-                    android:layout_height="73dp"
-                    android:layout_width="73dp"
-                    android:id="@+id/app_icon" />
+                    android:id="@+id/app_icon"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp" />
 
                 <TextView
-                    android:layout_height="wrap_content"
+                    android:id="@+id/app_name"
                     android:layout_width="match_parent"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="6dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/font_white"
                     android:layout_marginTop="6dp"
+                    android:gravity="center"
                     android:text="Name"
-                    android:id="@+id/app_name" />
-
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:alpha="0.6"
-                    android:layout_marginHorizontal="6dp"
-                    android:textSize="11sp"
                     android:textColor="@color/font_white"
-                    android:text="packagename"
-                    android:id="@+id/app_packagename" />
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_height="wrap_content"
+                    android:id="@+id/app_packagename"
                     android:layout_width="match_parent"
-                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:alpha="0.6"
                     android:gravity="center"
-                    android:alpha="0.45"
+                    android:text="packagename"
+                    android:textColor="@color/font_white"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="6dp"
                     android:layout_marginTop="-2dp"
-                    android:textSize="9sp"
-                    android:textColor="@color/font_white"
+                    android:layout_marginBottom="5dp"
+                    android:alpha="0.45"
+                    android:gravity="center"
                     android:text="version"
-                    android:id="@+id/app_version" />
+                    android:textColor="@color/font_white"
+                    android:textSize="9sp" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
                     android:id="@+id/install_progress"
@@ -76,62 +86,75 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_marginEnd="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cancel_btn"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toBottomOf="@id/normal_describe"
                 android:id="@+id/install_btn"
-                android:text="安装" />
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:text="安装"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@id/cancel_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/normal_describe" />
 
             <com.google.android.material.button.MaterialButton
-                android:layout_height="wrap_content"
+                android:id="@+id/cancel_btn"
                 android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="5dp"
+                android:text="取消"
+                android:textSize="12sp"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/install_btn"
-                android:layout_marginTop="3dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toBottomOf="@id/normal_describe"
-                android:id="@+id/cancel_btn"
-                android:text="取消" />
+                app:layout_constraintTop_toTopOf="@id/install_btn" />
 
-            
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/log_view_card"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="2dp"
+                android:focusable="false"
+                android:alpha="0.8"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
-                android:layout_marginTop="3dp"
-                android:layout_marginStart="5dp"
-                android:focusable="false"
-                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/cancel_btn">
+
                 <TextView
                     android:id="@+id/log_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/font_white"
-                    android:padding="6dp"
+                    android:focusable="false"
                     android:minHeight="20dp"
-                    android:alpha="0.8"
-                    android:focusable="false" />
+                    android:padding="6dp"
+                    android:textSize="11sp"
+                    android:text="1111"
+                    android:textColor="@color/font_white" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_height="wrap_content"
+                android:id="@+id/menu_btn"
                 android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="2dp"
+                android:text="设置"
+                android:textSize="12sp"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="3dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintTop_toBottomOf="@id/log_view_card"
-                android:id="@+id/menu_btn"
-                android:text="设置" />
+                app:layout_constraintTop_toBottomOf="@id/log_view_card" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                app:layout_constraintTop_toBottomOf="@id/menu_btn"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

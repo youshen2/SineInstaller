@@ -8,9 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.AndroidRuntimeException;
 
-import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,7 +16,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import cn.bavelee.pokeinstaller.ShellUtils;
-import moye.installer.Activity.DialogActivity;
+import moye.installer.activity.DialogActivity;
 
 //你问问这部分代码的包怎么还是Poke的？绝对不是懒得改直接搬（）
 
@@ -29,14 +27,14 @@ public class APKCommander {
     private ApkInfo mApkInfo;
     private ICommanderCallback callback;
     private Handler handler;
-    
+
     private SharedPreferences sharedPreferences;
 
     public APKCommander(Context context, Uri uri, ICommanderCallback commanderCallback) {
         this.context = context;
         this.uri = uri;
         this.callback = commanderCallback;
-        this.sharedPreferences = context.getSharedPreferences("settings",context.MODE_PRIVATE); //Warning直接忽略，能用就行
+        this.sharedPreferences = context.getSharedPreferences("settings", context.MODE_PRIVATE); //Warning直接忽略，能用就行
         handler = new Handler(Looper.getMainLooper());
         new ParseApkTask().start();
     }
@@ -60,7 +58,7 @@ public class APKCommander {
                 }
             });
             String installCommand = "";
-            switch(sharedPreferences.getInt("set_install_type",0)){ //判断一下安装方式
+            switch (sharedPreferences.getInt("set_install_type", 0)) { //判断一下安装方式
                 case 1:
                     installCommand = "cp \"" + mApkInfo.getApkFile().getPath() + "\" \"/data/app/" + mApkInfo.getApkFile().getName() + "\"\nchmod 644 \"/data/app/" + mApkInfo.getApkFile().getName() + "\"\n"; //暴力复制方式的安装命令
                     break;
@@ -100,8 +98,9 @@ public class APKCommander {
                 }
             });
             if (retCode == 0 && mApkInfo.isFakePath())
-                if(sharedPreferences.getBoolean("set_auto_delete",false) && mApkInfo.getApkFile().getPath().length() > 5 && !mApkInfo.getApkFile().getPath().isEmpty()) ShellUtils.execWithRoot("rm -f \"" + mApkInfo.getApkFile().getPath() + "\"\n"); //我知道有一定的危险性所以没加-r()
-                handler.post(new Runnable() {
+                if (sharedPreferences.getBoolean("set_auto_delete", false) && mApkInfo.getApkFile().getPath().length() > 5 && !mApkInfo.getApkFile().getPath().isEmpty())
+                    ShellUtils.execWithRoot("rm -f \"" + mApkInfo.getApkFile().getPath() + "\"\n"); //我知道有一定的危险性所以没加-r()
+            handler.post(new Runnable() {
                 @Override
                 public void run() {
                     callback.onApkInstalled(mApkInfo, retCode);
@@ -174,12 +173,12 @@ public class APKCommander {
                         callback.onApkParsed(mApkInfo);
                     }
                 });
-            }catch (SecurityException e){
+            } catch (SecurityException e) {
                 //安卓4用mt管理器调用安装发现会抛出这个错误，uri没权限访问？而且只有安卓4有这个问题
                 e.printStackTrace();
                 Intent intent = new Intent(context, DialogActivity.class);
-                intent.putExtra("title","提醒");
-                intent.putExtra("content","没有对应的权限打开文件，请尝试更换文件管理器！");
+                intent.putExtra("title", "提醒");
+                intent.putExtra("content", "没有对应的权限打开文件，请尝试更换文件管理器！");
                 context.startActivity(intent);
                 handler.post(new Runnable() {
                     @Override
@@ -195,7 +194,6 @@ public class APKCommander {
                     }
                 });
                 e.printStackTrace();
-                throw new AndroidRuntimeException(e);
             }
         }
     }

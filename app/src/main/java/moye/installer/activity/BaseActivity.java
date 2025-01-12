@@ -1,7 +1,8 @@
-package moye.installer.Activity;
+package moye.installer.activity;
 
 import android.app.Activity;
 import android.content.Context;
+
 import moye.installer.SineInstaller;
 
 public class BaseActivity extends Activity {

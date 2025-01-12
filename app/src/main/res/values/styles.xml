@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="CardStyle" parent="Widget.MaterialComponents.CardView">
         <item name="rippleColor" tools:ignore="PrivateResource">@color/mtrl_btn_ripple_color</item>
         <item name="cardElevation">0dp</item>
